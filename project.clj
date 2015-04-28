@@ -1,4 +1,4 @@
-(defproject grosse-voix-site "0.0.1-SNAPSHOT"
+(defproject grossevoix "0.0.1-SNAPSHOT"
   :description "heroku tunnel"
   :url "http://grossevoix.herokuapp.com"
   :license {:name "Eclipse Public License v1.0"
