@@ -1,19 +1,13 @@
-(ns clojure-getting-started.web
+(ns grossevoix.web
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
             [clojure.java.io :as io]
             [ring.adapter.jetty :as jetty]
             [environ.core :refer [env]]
-            [clojure-getting-started.process :refer [say fetch]]
-            [clojure-getting-started.ip :refer [read-ip]]
-
+            [grossevoix.process :refer [say fetch]]
+            [grossevoix.ip :refer [read-ip]]
             ))
-
-(defn splash []
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body (pr-str ["Hello" :from 'Heroku])})
 
 
 (def ip (atom (read-ip)))
@@ -21,14 +15,10 @@
 
 
 (defroutes app
-  (GET "/" []
-       (splash))
   (POST "/say" {{msg :msg} :params}
        (say @ip @port msg))
   (GET "/say" []
-       (fetch @ip @port)
-
-       )
+       (fetch @ip @port))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
@@ -46,8 +36,5 @@
 
 
 ; TODO -
-; calls to parse-api in clj
 ; serve a web page with a simple web form that posts to the heroku app
-; back-end route that forwards the call to the home server
-; map ports (using router) to go to the right spot.
 

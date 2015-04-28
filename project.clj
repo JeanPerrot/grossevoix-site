@@ -1,6 +1,6 @@
-(defproject clojure-getting-started "1.0.0-SNAPSHOT"
-  :description "Demo Clojure web app"
-  :url "http://clojure-getting-started.herokuapp.com"
+(defproject grosse-voix-site "0.0.1-SNAPSHOT"
+  :description "heroku tunnel"
+  :url "http://grossevoix.herokuapp.com"
   :license {:name "Eclipse Public License v1.0"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]

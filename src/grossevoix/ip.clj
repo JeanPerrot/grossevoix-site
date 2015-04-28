@@ -1,4 +1,4 @@
-(ns clojure-getting-started.ip
+(ns grossevoix.ip
   (:require [clj-http.client :as http]))
 
 
@@ -15,7 +15,4 @@
                :as      :json})
     :body :results first :ip .trim
     ))
-
-
-
 

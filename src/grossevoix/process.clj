@@ -1,4 +1,4 @@
-(ns clojure-getting-started.process
+(ns grossevoix.process
   (:require [clj-http.client :as http]))
 
 (defn- endpoint [ip port]
