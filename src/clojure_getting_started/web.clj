@@ -5,7 +5,7 @@
             [clojure.java.io :as io]
             [ring.adapter.jetty :as jetty]
             [environ.core :refer [env]]
-            [clojure-getting-started.process :refer [say]]
+            [clojure-getting-started.process :refer [say fetch]]
             [clojure-getting-started.ip :refer [read-ip]]
 
             ))
@@ -25,7 +25,10 @@
        (splash))
   (POST "/say" {{msg :msg} :params}
        (say @ip @port msg))
-  (GET "/say" [] "ok")
+  (GET "/say" []
+       (fetch @ip @port)
+
+       )
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
