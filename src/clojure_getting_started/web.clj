@@ -16,13 +16,6 @@
    :body (pr-str ["Hello" :from 'Heroku])})
 
 
-(defn- retrieve-home-url
-  "retrieve the url at which home is located"
-  [])
-
-(defn- forward-command[])
-
-
 (def ip (atom (read-ip)))
 (def port (atom 49160))
 
@@ -32,6 +25,7 @@
        (splash))
   (POST "/say" {{msg :msg} :params}
        (say @ip @port msg))
+  (GET "/say" [] "ok")
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
