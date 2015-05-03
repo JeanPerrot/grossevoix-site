@@ -7,6 +7,7 @@
             [environ.core :refer [env]]
             [grossevoix.process :refer [say fetch]]
             [grossevoix.ip :refer [read-ip]]
+            [grossevoix.page :as page]
             ))
 
 
@@ -19,6 +20,8 @@
        (say @ip @port msg))
   (GET "/say" []
        (fetch @ip @port))
+  (GET "/" []
+       (page/submit-form))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 

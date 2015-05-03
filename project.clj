@@ -8,6 +8,7 @@
                  [ring/ring-jetty-adapter "1.2.2"]
                  [environ "0.5.0"]
                  [clj-http "1.1.1"]
+                 [hiccup "1.0.5"]
                  ]
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.2.1"]]
